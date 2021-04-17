@@ -50,6 +50,9 @@ var builtins = FuncMap{
 	"le": le, // <=
 	"lt": lt, // <
 	"ne": ne, // !=
+
+	// Placeholder functions
+	"execTemplate": execTemplate,
 }
 
 var builtinFuncs = createValueFuncs(builtins)
@@ -644,6 +647,14 @@ func JSEscaper(args ...interface{}) string {
 // its arguments in a form suitable for embedding in a URL query.
 func URLQueryEscaper(args ...interface{}) string {
 	return url.QueryEscape(evalArgs(args))
+}
+
+// Placeholder functions which are executed by the interpreter.
+
+// execTemplate executes the associated template with the given name and data
+// and returns its return value.
+func execTemplate(name string, data reflect.Value) reflect.Value {
+	panic("this should never execute")
 }
 
 // evalArgs formats the list of arguments into a string. It is therefore equivalent to
