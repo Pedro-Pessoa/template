@@ -61,6 +61,7 @@ const (
 	// Keywords appear after all the rest.
 	itemKeyword  // used only to delimit the keywords
 	itemBlock    // block keyword
+	itemCatch    // catch keyword
 	itemDot      // the cursor, spelled '.'
 	itemDefine   // define keyword
 	itemElse     // else keyword
@@ -69,12 +70,14 @@ const (
 	itemNil      // the untyped nil constant, easiest to treat as a keyword
 	itemRange    // range keyword
 	itemTemplate // template keyword
+	itemTry      // try keyword
 	itemWith     // with keyword
 )
 
 var key = map[string]itemType{
 	".":        itemDot,
 	"block":    itemBlock,
+	"catch":    itemCatch,
 	"define":   itemDefine,
 	"else":     itemElse,
 	"end":      itemEnd,
@@ -82,6 +85,7 @@ var key = map[string]itemType{
 	"range":    itemRange,
 	"nil":      itemNil,
 	"template": itemTemplate,
+	"try":      itemTry,
 	"with":     itemWith,
 }
 
